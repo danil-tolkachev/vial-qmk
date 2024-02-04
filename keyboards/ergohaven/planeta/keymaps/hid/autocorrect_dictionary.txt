@@ -1,8 +1,128 @@
+# apt
 'au' -> sudo apt update
 'ai' -> sudo apt install
+'ar' -> sudo apt remove
+'as' -> apt search
+'aar' -> sudo apt autoremove
+
+# cmake
+'cr' -> cmake -DCMAKE_BUILD_TYPE=Release
+'cd' -> cmake -DCMAKE_BUILD_TYPE=Debug
+'cm' -> catkin_make
+'cmr' -> catkin_make -DCMAKE_BUILD_TYPE=Release
+'cmd' -> catkin_make -DCMAKE_BUILD_TYPE=Debug
+'cmi' -> catkin_make_isolated -DCMAKE_BUILD_TYPE=Release
+'ccr' -> catkin config --cmake-args -DCMAKE_BUILD_TYPE=Release
+'ccb' -> catkin config --profile debug -x _dbg --cmake-args -DCMAKE_BUILD_TYPE=Debug
+'cci' -> catkin config --install
+'cb' -> catkin build
+'cc' -> catkin clean -bdiL
+'cbd' -> catkin build --profile debug
+'clb' -> colcon build --cmake-args -DCMAKE_BUILD_TYPE=Release --symlink-install
+
+# docker
+'ds' -> docker stop $(docker ps -aq)
+'di' -> docker images
+'dr' -> docker run -it --rm --network host
+'drst' -> sudo systemctl restart docker
+'dx' -> xhost +local:ROOT
+'drx' -> docker run -it --rm --network host --volume="/tmp/.X11-unix:/tmp/.X11-unix:rw" --env="DISPLAY"
+
+# docker compose
+'dcu' -> docker compose up
+'dcd' -> docker compose down
+'dcb' -> docker compose build
+
+# git
+'gcl' -> git clone --recurse-submodules
+'gp' -> git push
+'gpa' -> git push --all
+'gpf' -> git push --force
+'gf' -> git fetch
+'gc' -> git commit -m ''
+'ga' -> git commit --amend --author='Danil Tolkachev <dandur.oak@gmail.com>'
+'gu' -> git -c user.name='Danil Tolkachev' -c user.email='dandur.oak@gmail.com'
+'guc' -> git -c user.name='Danil Tolkachev' -c user.email='dandur.oak@gmail.com' commit -m ''
+'gum' -> git -c user.name='Danil Tolkachev' -c user.email='dandur.oak@gmail.com' merge --no-ff origin/
+'gus' -> git -c user.name='Danil Tolkachev' -c user.email='dandur.oak@gmail.com' stash
+'gl' -> git log --graph --abbrev-commit --decorate --format=format:'%C(bold blue)%h%C(reset) %C(bold green)(%ar)%C(reset) %C(normal)%s%C(reset) %C(dim white)%an%C(reset)%C(bold yellow)%d%C(reset)' --all
+
 # python
 'inp' -> import numpy as np
 'ipd' -> import pandas as pd
 'iplt' -> import matplotlib.pyplot as plt
 'icv' -> import cv2 as cv
 'if' -> from __future__ import division, print_function
+
+# ROS
+'rc' -> roscore
+'rl' -> roslaunch
+'rnl' -> rosnode list
+'rni' -> rosnode info
+'rtl' -> rostopic list
+'rte' -> rostopic echo --noarr
+'rth' -> rostopic hz -w10
+'rtd' -> rostopic delay -w10
+'rsl' -> rosservice list
+'rsc' -> rosservice call
+'rbp' -> rosbag play --loop --rate=1.0
+
+# ROS2
+'wr' -> ros2 run
+'wn' -> ros2 node
+'wnl' -> ros2 node list
+'wni' -> ros2 node info
+'wt' -> ros2 topic
+'wtl' -> ros2 topic list
+'wte' -> ros2 topic echo --no-arr
+'wth' -> ros2 topic hz -w10
+'wtd' -> ros2 topic delay -w10
+'ws' -> ros2 service
+'wsl' -> ros2 service list
+'wsc' -> ros2 service call
+'wl' -> ros2 launch
+
+# source
+'sr' -> source /opt/ros/noetic/setup.zsh
+'sw' -> source /opt/ros/foxy/setup.zsh
+'sre' -> source /opt/ros/eloquent/setup.zsh
+'sreb' -> source /opt/ros/eloquent/setup.bash
+'srf' -> source /opt/ros/foxy/setup.zsh
+'srfb' -> source /opt/ros/foxy/setup.bash
+'srg' -> source /opt/ros/galactic/setup.zsh
+'srgb' -> source /opt/ros/galactic/setup.bash
+'srh' -> source /opt/ros/humble/setup.zsh
+'srhb' -> source /opt/ros/humble/setup.bash
+'srr' -> source /opt/ros/rolling/setup.zsh
+'srrb' -> source /opt/ros/rolling/setup.bash
+'srk' -> source /opt/ros/kinetic/setup.zsh
+'srkb' -> source /opt/ros/kinetic/setup.bash
+'srm' -> source /opt/ros/melodic/setup.zsh
+'srmb' -> source /opt/ros/melodic/setup.bash
+'srn' -> source /opt/ros/noetic/setup.zsh
+'srnb' -> source /opt/ros/noetic/setup.bash
+'sd' -> source devel/setup.zsh
+'sdb' -> source devel/setup.bash
+'sdi' -> source devel_isolated/setup.zsh
+'sdib' -> source devel_isolated/setup.bash
+'si' -> source install/setup.zsh
+'sib' -> source install/setup.bash
+'sz' -> source ~/.zshrc
+
+# paths
+'sli' -> /stereo/left/image_raw
+'slc' -> /stereo/left/camera_info
+'sri' -> /stereo/right/image_raw
+'src' -> /stereo/right/camera_info
+
+# vim
+'vb' -> vim ~/.bashrc
+'ve' -> sudo vim /etc/environment
+'vf' -> sudo vim /etc/fstab
+'vh' -> sudo vim /etc/host
+'vz' -> vim ~/.zshrc
+
+# shebang
+'bs' -> #!/bin/sh
+'bb' -> #!/bin/bash
+'bp' -> #!/usr/bin/env python
