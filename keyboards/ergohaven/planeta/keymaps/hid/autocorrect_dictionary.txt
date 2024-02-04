@@ -1,0 +1,8 @@
+'au' -> sudo apt update
+'ai' -> sudo apt install
+# python
+'inp' -> import numpy as np
+'ipd' -> import pandas as pd
+'iplt' -> import matplotlib.pyplot as plt
+'icv' -> import cv2 as cv
+'if' -> from __future__ import division, print_function
