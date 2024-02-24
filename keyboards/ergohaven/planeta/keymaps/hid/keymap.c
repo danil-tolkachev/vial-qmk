@@ -32,13 +32,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
          _______, _______, KC_ASTR, KC_COLN, KC_SLSH, _______,                          _______, KC_PIPE, KC_TILD, KC_AMPR, _______,  _______,
                   _______, _______, _______, ADJUST,  _______,  _______,        _______, _______, _______, _______, _______, _______ \
         ),
-    
+
       [_ADJUST] = LAYOUT(
         QK_BOOT, _______, _______, _______, _______, _______,                           CG_TOGG, _______, _______, _______, _______, _______,
         _______, _______, _______, _______, _______, _______,                           _______, _______, _______, _______, DM_PLY1, DM_REC1,
         _______, CK_RST,  CK_DOWN, CK_UP,   CK_TOGG, AU_TOGG,                           _______, KC_VOLD, KC_MUTE, KC_VOLU, DM_PLY2, DM_REC2,
         _______, _______, _______, _______, _______, _______,                           _______, KC_MPRV, KC_MPLY, KC_MNXT, _______, DM_RSTP,
-                 _______, _______, _______, _______, _______, _______,         _______, _______, _______, _______, _______, _______                  
+                 _______, _______, _______, _______, _______, _______,         _______, _______, _______, _______, _______, _______
        ),
 };
 
@@ -77,7 +77,7 @@ void hid_sync(uint8_t initiator2target_buffer_size, const void *initiator2target
 // }
 #ifdef RGBLIGHT_ENABLE
 const rgblight_segment_t PROGMEM my_base_layer[] = RGBLIGHT_LAYER_SEGMENTS(
-    {0, 2, HSV_WHITE}
+    {0, 2, HSV_OFF}
 );
 const rgblight_segment_t PROGMEM my_layer1_layer[] = RGBLIGHT_LAYER_SEGMENTS(
     {0, 2, HSV_CYAN}
@@ -91,10 +91,10 @@ const rgblight_segment_t PROGMEM my_layer3_layer[] = RGBLIGHT_LAYER_SEGMENTS(
 
 // Now define the array of layers. Later layers take precedence
 const rgblight_segment_t* const PROGMEM my_rgb_layers[] = RGBLIGHT_LAYERS_LIST(
-    my_base_layer,    
-    my_layer1_layer,    
-    my_layer2_layer,    
-    my_layer3_layer     
+    my_base_layer,
+    my_layer1_layer,
+    my_layer2_layer,
+    my_layer3_layer
 );
 
 
