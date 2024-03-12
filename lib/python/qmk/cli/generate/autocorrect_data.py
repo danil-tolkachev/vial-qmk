@@ -270,6 +270,7 @@ def generate_autocorrect_data(cli):
 
     min_typo = min(autocorrections, key=typo_len)[0]
     max_typo = max(autocorrections, key=typo_len)[0]
+    max_corr = max(autocorrections, key=lambda e: len(e[1]))[1]
 
     # Build the autocorrect_data.h file.
     autocorrect_data_h_lines = [GPL2_HEADER_C_LIKE, GENERATED_HEADER_C_LIKE, '#pragma once', '']
@@ -281,6 +282,7 @@ def generate_autocorrect_data(cli):
     autocorrect_data_h_lines.append('')
     autocorrect_data_h_lines.append(f'#define AUTOCORRECT_MIN_LENGTH {len(min_typo)} // "{min_typo}"')
     autocorrect_data_h_lines.append(f'#define AUTOCORRECT_MAX_LENGTH {len(max_typo)} // "{max_typo}"')
+    autocorrect_data_h_lines.append(f'#define AUTOCORRECT_MAX_CORR {len(max_corr) + 1} // "{max_corr}"')
     autocorrect_data_h_lines.append(f'#define DICTIONARY_SIZE {len(data)}')
     autocorrect_data_h_lines.append('')
     autocorrect_data_h_lines.append('static const uint8_t autocorrect_data[DICTIONARY_SIZE] PROGMEM = {')

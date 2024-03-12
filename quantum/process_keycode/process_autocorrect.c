@@ -348,7 +348,7 @@ bool process_autocorrect(uint16_t keycode, keyrecord_t *record) {
              *
              * B) When correcting 'typo' -- Need extra offset for terminator
              */
-            char correct[AUTOCORRECT_MAX_LENGTH + 10] = {0}; // let's hope this is big enough
+            char correct[AUTOCORRECT_MAX_CORR] = {0}; // let's hope this is big enough
 
             uint8_t offset = space_last ? backspaces : backspaces + 1;
             strcpy(correct, typo);
