@@ -137,5 +137,17 @@ bool process_record_lang(uint16_t keycode, keyrecord_t* record) {
         return false;
     }
 
+    if (QK_UNICODE <= keycode && keycode < QK_UNICODE_MAX) {
+        if (record->event.pressed) {
+            if (record->event.pressed) {
+                uint8_t lang = cur_lang;
+                set_lang(LANG_EN);
+                register_unicode(keycode - QK_UNICODE);
+                set_lang(lang);
+            }
+        }
+        return false;
+    }
+
     return true;
 }
